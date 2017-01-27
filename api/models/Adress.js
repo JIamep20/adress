@@ -15,10 +15,6 @@ module.exports = {
     },
     description: {
       type: 'string'
-    },
-    city: {
-      model: 'city',
-      required: true
     }
   }
 };

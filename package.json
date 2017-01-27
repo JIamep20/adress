@@ -6,7 +6,9 @@
   "keywords": [],
   "dependencies": {
     "angular": "^1.6.1",
+    "angular-ui-grid": "^4.0.2",
     "angular-ui-router": "^0.4.2",
+    "bluebird": "^3.4.7",
     "bootstrap": "^3.3.7",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
@@ -23,6 +25,7 @@
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
     "jquery": "^3.1.1",
+    "q": "^1.4.1",
     "rc": "1.0.1",
     "sails": "~0.12.11",
     "sails-disk": "~0.10.9",
@@ -34,7 +37,8 @@
     "build-dev": "./node_modules/.bin/better-npm-run build-dev",
     "build-prod": "./node_modules/.bin/better-npm-run build-prod",
     "devs": "./node_modules/.bin/better-npm-run devs",
-    "sails": "./node_modules/.bin/better-npm-run sails"
+    "sails": "./node_modules/.bin/better-npm-run sails",
+    "lift": "sails lift"
   },
   "betterScripts": {
     "build-dev": {
@@ -83,6 +87,7 @@
     "fs": "0.0.1-security",
     "html-webpack-plugin": "^2.26.0",
     "imports-loader": "^0.7.0",
+    "node-mongo-seeds": "^2.3.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
