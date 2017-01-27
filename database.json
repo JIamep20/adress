@@ -1,0 +1,7 @@
+{
+  "development": {
+    "driver": "mongodb",
+    "database": "oms",
+    "host": "localhost"
+  }
+}
