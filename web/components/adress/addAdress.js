@@ -16,8 +16,9 @@ module.exports = function(app) {
       adressesService.postAdress(vm.model)
         .then(function(data) {
           vm.model = {};
+          vm.city = '';
         })
         .catch(function(err) {console.log(err);});
     }
   }
-}
+};

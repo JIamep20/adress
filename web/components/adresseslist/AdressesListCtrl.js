@@ -1,6 +1,3 @@
-var _ = require('lodash');
-
-require('./styles.scss');
 
 module.exports = function (app) {
   app.controller('AdressesListCtrl', AdresseslistCtrl);
@@ -89,7 +86,7 @@ module.exports = function (app) {
         })
         .catch(function(err) {
           console.log(err);
-          vm.gridApi.infiniteScroll.dataLoaded();
+          vm.gridApi.infiniteScroll.dataLoaded(false, false);
           return promise.reject();
         });
     };
