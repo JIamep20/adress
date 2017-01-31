@@ -6,9 +6,9 @@ module.exports = function(app) {
       .state('main', {
         url: '/',
         //templateUrl: 'app/main/main.html',
-        template: require('./components/adresseslist/AdressesList.html')
-        //controller: 'MainController',
-        //controllerAs: 'main',
+        template: require('./components/adresseslist/AdressesList.html'),
+        controller: 'AdressesListCtrl',
+        controllerAs: 'alc',
         //ncyBreadcrumb: {
         //  label: 'Hydra'
         //},
@@ -18,10 +18,25 @@ module.exports = function(app) {
         //  }
         //}
       })
-      .state('a', {
-        url: '/a',
-        template: '<h1>MA</h1>'
-      });
+      .state('addAdress', {
+        url: '/add_adress',
+        template: require('./components/adress/AddEditAdress.html'),
+        controller: 'AddAdressCtrl',
+        controllerAs: 'adressCtrl'
+      })
+      .state('addCity', {
+        url: '/add_city',
+        template: require('./components/addCity/AddCity.html'),
+        controller: 'AddCityCtrl',
+        controllerAs: 'acc',
+      })
+      .state('editAdress', {
+        url: '/adress/{adressId}',
+        template: require('./components/adress/AddEditAdress.html'),
+        controller: 'EditAdressCtrl',
+        controllerAs: 'adressCtrl'
+      })
+    ;
     //$locationProvider.hash = '';
     $urlRouterProvider.otherwise('/');
   });

@@ -8,14 +8,17 @@
  */
 
 module.exports = {
-	index: function (req, res) {
-	  res.ok('index');
-  },
-  update: function (req, res) {
-    res.ok('update');
-  },
-  post: function (req, res) {
-    res.ok('post');
+  // find: function(req, res) {
+  //   Adress.find().populate('city')
+  //     .then(function(items) {console.log(items); res.ok(items);})
+  //     .catch(function(error) {console.log(error); res.ok(error);})
+  //   ;
+  // }
+
+  getPaginated: function(req, res) {
+    Adress.find().populate('city').paginate({page: req.query.page, limit: 50})
+      .then(function(response) {res.ok(response);})
+      .catch(function(err) {res.send(err, 500);});
   }
 };
 

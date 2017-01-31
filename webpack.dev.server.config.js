@@ -13,9 +13,9 @@ config.entry = config.entry.concat([
 ]);
 
 config.output = {
-  path: path.join(__dirname, 'static', 'includes'),
+  path: path.join(__dirname, 'static'),
   filename: 'bundle.js',
-  publickPath: 'includes'
+  publicPath: '/'
 };
 
 config.plugins = config.plugins.concat([
@@ -24,7 +24,7 @@ config.plugins = config.plugins.concat([
 ]);
 
 config.devServer = {
-  contentBase: path.join(__dirname, '/static'),
+  contentBase: path.join(__dirname, 'static'),
   host: host,
   port: port,
   stats: 'minimal',

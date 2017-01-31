@@ -1,0 +1,17 @@
+<h2>Add new city to system</h2>
+
+<form name="acc.AddCityForm" class="well">
+  <div class="form-group">
+    <label for="cityName">City name</label>
+    <input type="text" name="city" class="form-control" id="cityName" placeholder="City" ng-model="acc.city" required>
+  </div>
+
+  <div class="form-group">
+    <label for="cityName">City name</label>
+    <textarea type="text" name="description" rows="3" class="form-control" id="cityDescription" placeholder="Description" ng-model="acc.description"></textarea>
+  </div>
+
+  <div class="alert alert-danger" role="alert" ng-show="acc.AddCityForm.$invalid && acc.AddCityForm.city.$dirty">The city name is required</div>
+  <!--<div class="alert alert-success" role="alert" ng-show="!!acc.success">{{acc.success}}</div>-->
+  <button type="submit" class="btn btn-default" ng-disabled="acc.AddCityForm.$invalid" ng-click="acc.sendRequest(); $event.preventDefault();">Submit</button>
+</form>

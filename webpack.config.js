@@ -11,14 +11,14 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'assets', 'includes'),
     filename: 'bundle.js',
-    publickPath: 'includes'
+    publicPath: 'includes'
   },
   plugins: prod ?
     [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin(),
       new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)}),
-      //new webpack.ProvidePlugin({}),
+      new webpack.ProvidePlugin({}),
       new CleanWebpackPlugin(['assets'], {
         root: __dirname,
         dry: false
@@ -26,7 +26,7 @@ module.exports = {
     ] :
     [
       new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)}),
-      //new webpack.ProvidePlugin({angular: 'angular'}),
+      new webpack.ProvidePlugin({Promise: 'angular'}),
       new CleanWebpackPlugin(['assets'], {
         root: __dirname,
         dry: false
@@ -36,8 +36,12 @@ module.exports = {
     loaders: [
       {test: /\.html/, loader: 'raw'},
       {test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-      loader : 'file-loader'},
-      {test: /\.css$/, loader: 'style!css'}
+      loader : 'url-loader'},
+      {test: /\.css$/, loader: 'style!css'},
+      {
+        test: /\.scss/,
+        loader: "style-loader!css-loader?sourceMap!sass-loader?sourceMap"
+      },
     ]
   },
   devtool: prod ? 'source-map' : 'cheap-inline-module-source-map'

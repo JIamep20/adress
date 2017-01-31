@@ -1,0 +1,26 @@
+<h2>Add\Edit adress to system</h2>
+
+
+
+<form name="adressCtrl.addAdressForm" class="well">
+  <div class="form-group">
+    <label for="adressTextArea">Adress</label>
+    <textarea class="form-control" rows="3" id="adressTextArea" name="adressTextArea" ng-model="adressCtrl.model.name" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="descriptionTextArea">Description</label>
+    <textarea class="form-control" rows="3" id="descriptionTextArea" name="descriptionTextArea" ng-model="adressCtrl.model.description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="citiesSelect">Select city</label>
+    <select name="citiesSelect" class="form-control"
+            ng-model="adressCtrl.city"
+            ng-options="city.id as city.name for city in adressCtrl.cities | orderBy: 'name'"
+    required>
+      <option value="">Select city</option>
+    </select>
+  </div>
+
+
+  <button type="submit" class="btn btn-default" ng-disabled="adressCtrl.addAdressForm.$invalid" ng-click="adressCtrl.sendRequest(); $event.preventDefault();">Submit</button>
+</form>
