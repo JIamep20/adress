@@ -44,9 +44,9 @@
     "start": "node app.js",
     "build-dev": "cross-env NODE_ENV=development ./node_modules/.bin/webpack",
     "build-prod": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --stats --colors",
-    "devs": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config webpack.dev.server.config.js",
-    "sails": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config webpack.sails.config.js",
-    "lift": "./node_modules/.bin/nodemon app.js --ignore web/"
+    "dev-server": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config webpack.dev.server.config.js",
+    "sails-dev-server": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config webpack.sails.config.js",
+    "sails-lift": "./node_modules/.bin/nodemon app.js --ignore web/"
   },
   "main": "app.js",
   "repository": {
